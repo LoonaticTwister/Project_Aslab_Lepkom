@@ -11,7 +11,7 @@ title = 'AMRTech'
 class FormPeminjaman(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi('peminjaman.ui', self)  # Memuat tata letak dari peminjaman.ui
+        loadUi('folder_ui/peminjaman.ui', self)  # Memuat tata letak dari peminjaman.ui
         self.setWindowTitle(title)
         self.btnUID.clicked.connect(self.cariuser)
         self.btnLID.clicked.connect(self.carilaptop)

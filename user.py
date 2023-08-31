@@ -7,7 +7,7 @@ title='AMRTech'
 class FormUser(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi('user.ui',self)
+        loadUi('folder_ui/user.ui',self)
         self.setWindowTitle(title)
         self.tampildata()
         self.btnSimpan.clicked.connect(self.simpandata)

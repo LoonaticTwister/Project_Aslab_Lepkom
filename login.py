@@ -8,7 +8,7 @@ from formutama import *
 class FormLogin(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi('login.ui', self)
+        loadUi('folder_ui/login.ui', self)
         self.setWindowTitle('AMRTech')
         self.btnLogin.clicked.connect(self.adminlogin) 
 

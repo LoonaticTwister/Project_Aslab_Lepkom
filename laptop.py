@@ -7,7 +7,7 @@ title='AMRTech'
 class FormLaptop(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi('laptop.ui',self)
+        loadUi('folder_ui/laptop.ui',self)
         self.setWindowTitle(title)
         self.tampildata()
         self.btnSimpan.clicked.connect(self.simpandata)

@@ -10,7 +10,7 @@ from peminjaman import *
 class FormUtama(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi('formutama.ui', self)
+        loadUi('folder_ui/formutama.ui', self)
         self.setWindowTitle('AMRTech')
         self.btnLogout.clicked.connect(self.logout)
         self.btnUSER.clicked.connect(self.formuser)

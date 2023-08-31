@@ -8,7 +8,7 @@ class CariUID(QDialog):
 
     def __init__(self):
         QDialog.__init__(self)
-        loadUi('cariuser.ui', self)
+        loadUi('folder_ui/cariuser.ui', self)
         self.setWindowTitle('AMRTech')
         self.tampildata()
         self.btnCari.clicked.connect(self.caridata)
