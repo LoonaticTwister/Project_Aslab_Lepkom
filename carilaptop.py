@@ -25,7 +25,7 @@ class CariLID(QDialog):
     def tampildata(self):
         try:
             #koneksi ke database
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = 'select * from tbl_laptop'
             cursor = con.cursor()
             cursor.execute(query)
@@ -49,7 +49,7 @@ class CariLID(QDialog):
     def caridata(self):
         try:
             cari = self.editCari.text()
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = "select * from tbl_laptop where laptop_id like '%"+cari+"%' or merk like '%"+cari+"%' or tipe like '%"+cari+"%'"
             cursor = con.cursor()
             cursor.execute(query)

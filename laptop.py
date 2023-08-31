@@ -45,7 +45,7 @@ class FormLaptop(QMainWindow):
     def tampildata(self):
         try:
             #koneksi ke database
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = 'select * from tbl_laptop'
             cursor = con.cursor()
             cursor.execute(query)
@@ -88,7 +88,7 @@ class FormLaptop(QMainWindow):
             jumlah = self.editJumlah.text()
 
             if lid != '' and merk != '' and tipe != '' and jumlah != '':
-                con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                 query = 'insert into tbl_laptop values (%s, %s, %s, %s)'
                 data = (lid, merk, tipe, int(jumlah))
                 cursor = con.cursor()
@@ -113,7 +113,7 @@ class FormLaptop(QMainWindow):
             tipe = self.editTipe.text()
             jumlah = self.editJumlah.text()
             if lid != '' and merk != '' and tipe != '' and jumlah != '':
-                con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                 query = 'update tbl_laptop set merk=%s, tipe=%s, jumlah_tersedia=%s where laptop_id=%s'
                 data=(merk, tipe, int(jumlah), lid)
                 cursor = con.cursor()
@@ -139,7 +139,7 @@ class FormLaptop(QMainWindow):
             if lid !='':
                 konfirm = self.konfirm('Apakah yakin ingin menghapus data ?')
                 if konfirm == QMessageBox.Ok:
-                    con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                    con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                     query = 'delete from tbl_laptop where laptop_id=%s'
                     data=(lid,)
                     cursor = con.cursor()

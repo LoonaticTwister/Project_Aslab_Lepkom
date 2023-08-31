@@ -46,7 +46,7 @@ class FormUser(QMainWindow):
     def tampildata(self):
         try:
             #koneksi ke database
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = 'select * from tbl_user'
             cursor = con.cursor()
             cursor.execute(query)
@@ -93,7 +93,7 @@ class FormUser(QMainWindow):
             tlp = self.EditTlpnUser.text()
 
             if uid != '' and nama != '' and email != '' and almt != '' and tlp != '':
-                con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                 query = 'insert into tbl_user values (%s, %s, %s, %s, %s)'
                 data = (uid, nama, email, almt, tlp)
                 cursor = con.cursor()
@@ -119,8 +119,8 @@ class FormUser(QMainWindow):
             almt = self.EditAlamatUser.text()
             tlp = self.EditTlpnUser.text()
             if uid != '' and nama != '' and email != '' and almt != '' and tlp != '':
-                con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
-                query = 'update tbl_user set nama=%s, email=%s, alamat=%s, telpon=%s where user_id=%s'
+                con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
+                query = 'update tbl_user set nama=%s, email=%s, alamat=%s, telepon=%s where user_id=%s'
                 data=(nama,email,almt,tlp,uid)
                 cursor = con.cursor()
                 cursor.execute(query, data)
@@ -146,7 +146,7 @@ class FormUser(QMainWindow):
             if uid !='':
                 konfirm = self.konfirm('Apakah yakin ingin menghapus data ?')
                 if konfirm == QMessageBox.Ok:
-                    con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                    con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                     query = 'delete from tbl_user where user_id=%s'
                     data=(uid,)
                     cursor = con.cursor()

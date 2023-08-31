@@ -1,0 +1,8 @@
+"username";"password"
+"bayu";"bayu"
+"laptop_id";"merk";"tipe";"jumlah_tersedia"
+"LID001";"Apple";"Macbook Air";"2"
+"peminjaman_id";"laptop_id";"user_id";"tanggal_peminjaman";"tanggal_pengembalian"
+"PID001";"LID001";"UID001";"2023-08-31";"2023-08-31"
+"user_id";"nama";"email";"alamat";"telepon"
+"UID001";"Reza";"reza@amrtech.com";"jakarta";"1231234"

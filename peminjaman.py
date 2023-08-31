@@ -74,7 +74,7 @@ class FormPeminjaman(QMainWindow):
     def tampildata(self):
         try:
             #koneksi ke database
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = 'SELECT * FROM tbl_peminjaman'
             cursor = con.cursor()
             cursor.execute(query)
@@ -106,7 +106,7 @@ class FormPeminjaman(QMainWindow):
             tglbalik = self.dateBalik.date()
             if uid != '' and lid != '' and pid != '':
             # koneksi ke database
-                con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                 query = 'insert into tbl_peminjaman values(%s, %s, %s, %s, %s)'
                 data = (pid,lid,uid,tglpinjam.toString('yyyy-MM-dd'),tglbalik.toString('yyyy-MM-dd'))
                 cursor = con.cursor()
@@ -130,7 +130,7 @@ class FormPeminjaman(QMainWindow):
             if pid !='':
                 konfirm = self.konfirm('Apakah yakin ingin menghapus data ?')
                 if konfirm == QMessageBox.Ok:
-                    con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                    con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
                     query = 'delete from tbl_peminjaman where peminjaman_id=%s'
                     data = (pid,)
                     cursor = con.cursor()

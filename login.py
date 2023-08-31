@@ -34,7 +34,7 @@ class FormLogin(QMainWindow):
             # Memeriksa apakah input username dan password tidak kosong
             if username != '' and password != '':
                 # koneksi ke database
-                con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+                con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
 
                 # Melakukan query untuk memeriksa keberadaan admin di tabel tbl_admin
                 query = 'select * from tbl_admin where username=%s and password=%s'

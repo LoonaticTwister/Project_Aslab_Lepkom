@@ -25,7 +25,7 @@ class CariUID(QDialog):
     def tampildata(self):
         try:
             #koneksi ke database
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = 'select * from tbl_user'
             cursor = con.cursor()
             cursor.execute(query)
@@ -48,7 +48,7 @@ class CariUID(QDialog):
     def caridata(self):
         try:
             cari = self.editCari.text()
-            con = mysql.connector.connect(user='root', password='', host='localhost', database='pinjam_laptop')
+            con = mysql.connector.connect(user='root', password='', host='localhost', database='amrtech')
             query = "select * from tbl_user where user_id like '%"+cari+"%' or nama like '%"+cari+"%' or email like '%"+cari+"%' or alamat like '%"+cari+"%' or email like '%"+cari+"%'"
             cursor = con.cursor()
             cursor.execute(query)
